@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Book</title>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="webjars/datatables/1.10.13/css/dataTables.bootstrap.min.css" media="screen">
+
+    <script type="text/javascript" src="webjars/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
+    <script type="text/javascript" src="webjars/datatables/1.10.13/js/jquery.dataTables.min.js" defer></script>
+    <script type="text/javascript" src="webjars/datatables/1.10.13/js/dataTables.bootstrap.min.js" defer></script>
+</head>
+<body>
+    <script type="text/javascript" th:src="@{/js/phoneBookDatatables.js}"></script>
+
+    <div class="container">
+        <div class="row">
+            <form th:action="@{/logout}" method="get">
+                <button class="btn btn-md btn-danger btn-block" name="registration"
+                        type="Submit">Logout</button>
+            </form>
+
+            <form id="detailsForm">
+                <div class="form-group">
+                    <h2>Add contact</h2>
+                    <input type="hidden" id="id" name="id">
+
+                    <label for="name" >Name</label>
+                    <input id="name" name="name">
+
+                    <label for="surname" >Surname</label>
+                    <input id="surname" name="surname">
+
+                    <label for="mobilePhone" >Mobile phone</label>
+                    <input id="mobilePhone" name="mobilePhone">
+
+                    <label for="homePhone" >Home phone</label>
+                    <input id="homePhone" name="homePhone">
+
+                    <button class="btn btn-primary" type="button" onclick="save()">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+
+            <table class="table table-striped display" id="datatable">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Mob</th>
+                    <th>Home</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
