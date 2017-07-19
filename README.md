@@ -2,6 +2,7 @@ install: git clone https://github.com/vladkucher/TelephoneDirectory
 
 
 run: 
+
      1) создать базу данных phonebook для mysql;
      2) в файле application.properties, который лежит в resources
      укажите какой профиль использовать для хранения данных:
