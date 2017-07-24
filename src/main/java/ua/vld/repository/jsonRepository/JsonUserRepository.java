@@ -19,10 +19,10 @@ import static ua.vld.util.JsonRepositoryUtil.writeToFile;
 @Profile({"jsondata", "default"})
 public class JsonUserRepository implements UserRepository{
     @Autowired
-    private Gson gson= new Gson();
+    private Gson gson;
 
     @Value("${file.name}")
-    private String fileName="D:\\file.json";
+    private String fileName;
 
     @Override
     public User save(User user){

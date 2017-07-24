@@ -19,7 +19,7 @@ CREATE TABLE users
   registered    TIMESTAMP DEFAULT now(),
   enabled       BOOL DEFAULT TRUE
 );
-CREATE UNIQUE INDEX users_unique_email_idx ON users (login);
+CREATE UNIQUE INDEX users_unique_login_idx ON users (login);
 
 CREATE TABLE user_roles
 (

@@ -1,4 +1,4 @@
-package ua.vld.config;
+package ua.vld;
 
 
 import org.junit.Assert;
@@ -7,7 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 import ua.vld.model.Role;
 import ua.vld.model.User;
 import ua.vld.service.UserService;
@@ -21,7 +20,6 @@ public abstract class AbstractUserServiceTest {
     private UserService userService;
 
     @Test
-    @Transactional
     public void saveUser(){
         User testUser = new User(null,"Andrey","Antonov","380975660000","380445660000","login",
                 "password","information","Andrey",null,null, Role.ROLE_USER);
